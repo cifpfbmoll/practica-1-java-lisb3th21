@@ -2,54 +2,60 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class ejercicio1 {
 
     public static void main(String[] args) {
-
-        System.out.println("Ingrese el ejercicio que desee ejecutar: ");
         Scanner input = new Scanner(System.in);
-        int respuesta = input.nextInt();
-        input.nextLine();
+        //JOptionPane info= new JOptionPane(message);
+        System.out.println("Ingrese el ejercicio que desee ejecutar: ");
+        String respuesta = "";
+        
+            System.out.println("Ingrese un numero del 1 al 9");
+            respuesta = input.next();
+
+       input.nextLine();
+       input.close();
         switch (respuesta) {
-            case 1:
+            case "1":
                 ejercicioA();
                 break;
-            case 2:
+            case "2":
                 ejercicioB();
                 break;
-            case 3:
+            case "3":
                 ejercicioC();
                 break;
-            case 4:
+            case "4":
                 System.out.println("Ingrese un texto y le le devolvemos su longitud: ");
                 String frase = input.nextLine();
                 System.out.println("Su texto tiene " + ejercicioD(frase));
                 break;
-            case 5:
+            case "5":
                 System.out.println("Ingrese un texto y le le devolvemos el texto invertido");
                 frase = input.nextLine();
                 System.out.println(ejercicioE(frase));
                 break;
-            case 6:
+            case "6":
                 System.out.println("Ingrese un texto y le le devolvemos el texto sin espacios");
                 frase = input.nextLine();
                 System.out.println(ejercicioF(frase));
                 break;
-            case 7:
+            case "7":
                 System.out.println("Ingrese una frase: ");
                 String frase1 = input.nextLine();
                 System.out.println("Ingrese otra frase: ");
                 String frase2 = input.nextLine();
                 System.out.println(ejercicioG(frase1, frase2));
                 break;
-            case 8:
+            case "8":
                 System.out.println("Ingrese una vocal:");
                 char vocal = input.nextLine().charAt(0);
                 System.out.println("Ingrese la frase que quiere modificar:");
                 frase = input.nextLine();
                 ejercicioH(frase, vocal);
                 break;
-            case 9:
+            case "9":
             System.out.println("Ingrese una frase y le devolveremos su codigo ASCII");
             frase=input.nextLine();
                 ejercicioI(frase);
@@ -132,15 +138,17 @@ public class ejercicio1 {
         System.out.println(
                 "La media de los numeros positivos que ha ingresado es " + (mediaNegativo / listaNegativos.size()));
         System.out.println("Los ceros que ha ingresado son:" + cantidadCero);
+        input.close();
     }
 
     public static int ejercicioD(String frase) {
+        //Reciba como parámetro un texto y devuelva la cantidad de caracteres que incorpora el texto.
         int cantidad = frase.length();
         return cantidad;
-
     }
 
     public static String ejercicioE(String frase) {
+        //Reciba como parámetro un texto y devuelva el texto invertido.
         String textoInvertido = "";
         for (int i = frase.length() - 1; i >= 0; i--) {
             char caracter = frase.charAt(i);
@@ -150,6 +158,7 @@ public class ejercicio1 {
     }
 
     public static String ejercicioF(String frase) {
+        //Reciba como parámetro un texto y lo devuelva sin espacios en blanco.
         String sinEspacios = "";
         for (int i = 0; i < frase.length(); i++) {
             char caracter = frase.charAt(i);
